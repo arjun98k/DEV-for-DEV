@@ -1,13 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rice.com - Premium Quality Rice</title>
+  <style>
+    /* General Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    
+    header {
+      background-color: #4CAF50;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 30px;
+      animation: fadeIn 2s ease-in;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+      animation: slideIn 1.5s ease-out;
+    }
+
+    .product {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      padding: 20px;
+      display: inline-block;
+      width: 300px;
+      transition: transform 0.3s;
+      animation: bounceIn 1.2s ease-in-out;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-100px); }
+      to { transform: translateY(0); }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+  </style>
 </head>
 <body>
-    <h1>Arjun kandekar is here</h1>
 
-    <script>prompt("kaise mere bacche log")</script>
+  <header>
+    <h1>Rice.com</h1>
+    <p>Your one-stop shop for premium quality rice!</p>
+  </header>
+
+  <div class="container">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1604152135912-04a7b7a70d8d" alt="Basmati Rice">
+      <h2>Basmati Rice</h2>
+      <p>Premium quality Basmati rice for your daily meals.</p>
+      <button class="btn">Buy Now</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1518611012118-c7e1ecb1d161" alt="Brown Rice">
+      <h2>Brown Rice</h2>
+      <p>Nutritious brown rice, full of fiber and health benefits.</p>
+      <button class="btn">Buy Now</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce" alt="Jasmine Rice">
+      <h2>Jasmine Rice</h2>
+      <p>Fragrant and soft Jasmine rice for your special dishes.</p>
+      <button class="btn">Buy Now</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Rice.com. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
