@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="arjun.css">
+    <script defer src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Collect form data
+        const formData = new FormData(contactForm);
+
+        // Convert FormData to JSON
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message')
+        };
+
+        // Log form data (for testing)
+        console.log('Form Data:', data);
+
+        // Send form data to the server
+        fetch('http://127.0.0.1:5500/Website_layout_html.html', { // Replace with your real URL
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Server error: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(result => {
+            console.log('Success:', result);
+            alert('Message sent successfully!');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error sending message. Please try again.');
+        });
+    });
+});
+
+
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>Akash Salekar</h1>
+            <p>AIML full stack dev | Web Dev</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi! I'm Arjun, a AI developer and passionate about creating interactive and responsive web experiences.</p>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Project 1</h3>
+                    <p>Description of Project 1.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Project 2</h3>
+                    <p>Description of Project 2.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Project 3</h3>
+                    <p>Description of Project 3.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Akash salekar. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
